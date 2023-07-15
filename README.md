@@ -56,7 +56,9 @@ Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://disc
 <p align="center">
   <img alt="Projeto Perfil GitHub" src=".github/Desktop1.jpg" width="100%">
 </p>
+
 ---
+
 <p align="center">
   <img alt="Projeto Perfil GitHub" src=".github/Desktop2.jpg" width="100%">
 </p>
