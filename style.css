@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  /*Mantém a medida padrão da borda*/
+  box-sizing: border-box;
+}
+
+/* "VARIÁVEIS" padrão da página */
+:root {
+  --text-color: white;
+  --bg-url: url(assets/bg-mobile.jpg);
+  --borda-color: rgba(255, 255, 255, 0.5);
+  --background-color-botao: rgba(255, 255, 255, 0.1);
+  --background-color-botao-hover: rgba(255, 255, 255, 0.05);
+  --social-links-color: rgba(255, 255, 255, 0.2);
+
+  --tema-botao: url(assets/moon-stars.svg);
+  --tema-botao-fundo: rgba(255, 255, 255, 0.1);
+  --tema-botao-fundo-cor: rgba(255, 255, 255, 0.5);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(assets/bg-mobile-light.jpg);
+  --borda-color: rgba(0, 0, 0, 0.5);
+  --borda-color: rgba(0, 0, 0, 0.5);
+  --background-color-botao: rgba(0, 0, 0, 0.05);
+  --background-color-botao-hover: rgba(0, 0, 0, 0.02);
+  --social-links-color: rgba(0, 0, 0, 0.1);
+
+  --tema-botao: url(assets/sun.svg);
+  --tema-botao-fundo: rgba(0, 0, 0, 0.1);
+  --tema-botao-fundo-cor: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  /* background: color image repeat position/size */
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  /* border: 1px solid red; */
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+/* --------------------------------- FOTO E LEGENDA PERFIL */
+#profile {
+  /* align-items: center; */
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* --------------------------------- BOTÃO ACESSIBILIDADE */
+#switch {
+  /* border: solid 1px red; */
+  /* Se o filho for absoluto respeita as margens deste elemento*/
+  position: relative;
+  width: 64px;
+  margin: 0 auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: white var(--tema-botao) no-repeat center;
+
+  position: absolute;
+  /* z-index: 0 padrão, quanto maior + p/ frente */
+  z-index: 1;
+  left: 0;
+
+  /* Unindo este 2 o objeto fica centralizado */
+  /* Estratégia para alinhar posicionamentos absolutos */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  /* desativa left */
+  left: initial;
+  right: 0;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--tema-botao-fundo);
+  border: 1px solid var(--tema-botao-fundo-cor);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* --------------------------------- 04 LINKS PARA CONTATO */
+ul {
+  list-style: none;
+  /* ajuste flexível no seu espaço*/
+  display: flex;
+  flex-direction: column;
+  /* adiciona espaço entre conteúdos */
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  /* todo espaço disponível */
+  display: flex;
+  /* altura da caixa */
+  height: 52px;
+  /* alinhamento na horizontal */
+  justify-content: center;
+  /* alinhamento na vertical */
+  align-items: center;
+  padding: 16px 24px;
+
+  /* trasparência vai de 0 a 1 */
+  background: var(--background-color-botao);
+  border: 1px solid var(--borda-color);
+  border-radius: 8px;
+
+  /* embassamento - ñ consigo ver difereça */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+
+ul li a:hover {
+  background: var(--background-color-botao-hover);
+  border: 1px solid var(--text-color);
+}
+
+/* --------------------------------- SOCIAL-LINKS */
+#social-links {
+  display: flex;
+  justify-content: center;
+  /* gap: 16px; */
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+/* Para o background ficar centralizado */
+#social-links a {
+  display: flex;
+  /* alinhamento na horizontal */
+  justify-content: center;
+  /* alinhamento na vertical */
+  align-items: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--social-links-color);
+}
+
+/* --------------------------------- RODAPÉ */
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
